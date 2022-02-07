@@ -63,3 +63,4 @@ git stash -u && git stash drop
 
 - [Python setup on the Windows subsystem for Linux (WSL)](https://medium.com/@rhdzmota/python-development-on-the-windows-subsystem-for-linux-wsl-17a0fa1839d)
 - [Stackoverflow - git undo all uncommitted or unsaved changes](https://stackoverflow.com/a/56511464/10907720)
+- [Path converters](https://docs.djangoproject.com/en/3.2/topics/http/urls/#path-converters)
