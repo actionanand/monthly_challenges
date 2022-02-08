@@ -16,7 +16,7 @@ monthly_challenges = {
     'september': 'Save water for future',
     'october': 'Donate blood!',
     'november': 'Water the plants',
-    'december': 'Drink water regularly'
+    'december': None
 }
 
 # Create your views here.
