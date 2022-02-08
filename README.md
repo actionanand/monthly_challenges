@@ -108,3 +108,23 @@ you would use
 ```python
 {{ result_from_a_function }}
 ```
+
+3. Building Static URLs Dynamically
+
+Imagine, that you want to build a static URL where some part of the URL (e.g. the filename) is actually stored in a variable that's exposed to the template.
+
+So you might want to build the URL like this:
+
+```python
+{% static "my_path/to/" + the_file %}
+```
+
+Here, "the_file" would be a variable holding the actual filename.
+
+The above code would fail.
+
+Instead, you can use the "add" filter provided by Django to construct this path dynamically:
+
+```python
+{% static "my_path/to/"|add:the_file %}
+```
