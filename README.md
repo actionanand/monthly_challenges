@@ -72,3 +72,39 @@ git stash -u && git stash drop
 - [Python by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [Pylance by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Best Visual Studio Code Extensions for Python/Django](https://blog.devgenius.io/best-visual-studio-code-extensions-for-python-django-af2fdbf7198a)
+
+### More on the Django Template Language (DTL)
+
+1.  Accessing Dictionary Fields in Templates
+
+When accessing dictionary data in a template, you DON'T use this syntax:
+
+```python
+{{ myDictionary['some_key'] }}
+```
+
+Instead, you use the dot notation - as if it were a regular Python object:
+
+```python
+{{ myDictionary.some_key }}
+```
+
+This might look strange, but keep in mind, that the DTL is a custom-made language. It looks like Python, but ultimately it is NOT Python - it's a language parsed and executed by Django. Hence, its syntax can deviate - just as it does here.
+
+2. Calling Functions in Templates
+
+Calling functions in templates also works differently than it does in Python.
+
+Instead of calling it, you use functions like regular variables or properties.
+
+I.e., instead of:
+
+```python
+{{ result_from_a_function() }}
+```
+
+you would use
+
+```python
+{{ result_from_a_function }}
+```
