@@ -16,29 +16,27 @@ monthly_challenges = {
     'september': 'Save water for future',
     'october': 'Donate blood!',
     'november': 'Water the plants',
-    'december': 'Drink water regularly'
+    'december': None
 }
 
 # Create your views here.
 
 def index(request):
-    list_items = ''
     months = list(monthly_challenges.keys())
-
-    for month in months:
-        capitalized_month = month.capitalize()
-        month_path = reverse('month-challenge', args=[month])
-        list_items += f'<li><a href="{month_path}">{capitalized_month}</a></li>'
-
-    response_data = f'<ul>{list_items}</ul>'
-    return HttpResponse(response_data)
+    return render(request, 'challenges/index.html', {
+        'months': months
+    })
 
 
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        response_data = render_to_string('challenges/challenge.html')
-        return HttpResponse(response_data)
+        return render(request, 'challenges/challenge.html', {
+            'text': challenge_text,
+            'month_name': month
+        })
+        # response_data = render_to_string('challenges/challenge.html')
+        # return HttpResponse(response_data)
     except:
         return HttpResponseNotFound('<h1>This month is not supported!</h1>')
 
