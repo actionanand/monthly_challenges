@@ -3,6 +3,7 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   // "window.zoomLevel": 6,
+  "emmet.includeLanguages": {"django-html": "html"},
   "files.associations": {
     "**/*.html": "html",
     "**/templates/**/*.html": "django-html",
